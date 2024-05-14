@@ -5,6 +5,7 @@ This is a Flutter app aimed at taking advantage of Dattebayo's comprehensive API
 ## Project Structure (Rough outline).
 
 Dattebayo provides its data in eight different collections:
+
       - [Characters](https://dattebayo-api.onrender.com/characters)
       - [Clans](https://dattebayo-api.onrender.com/clans)
       - [Villages](https://dattebayo-api.onrender.com/villages)
