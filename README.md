@@ -1,4 +1,4 @@
-# naruto_trove
+# Naruto Trove
 
 This is a Flutter app aimed at taking advantage of Dattebayo's comprehensive API on Naruto's Universe at [Dattebayo](https://api-dattebayo.vercel.app/docs#clans).
 
