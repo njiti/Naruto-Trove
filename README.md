@@ -1,16 +1,24 @@
 # naruto_trove
 
-A new Flutter project.
+This is a Flutter app aimed at taking advantage of Dattebayo's comprehensive API on Naruto's Universe at [Dattebayo](https://api-dattebayo.vercel.app/docs#clans).
 
-## Getting Started
+## Project Structure (Rough outline).
 
-This project is a starting point for a Flutter application.
+Dattebayo provides its data in eight different collections
+      - Characters
+      - Clans
+      - Villages
+      - Kekei-Genkai
+      - Tailed-Beasts
+      - Teams
+      - Akatsuki
+      - kara
+With each collection offering the option of getting the whole data or by id.
+The main constant thing being the characters who are listed as IDs everywhere. Meaning that when listing characters in a normal information app that goes from village to teams within the village to the characters. You have to refer to different endpoints in order to translate the ids to actual words allowing for users to easily understand words instead of just ids.
 
-A few resources to get you started if this is your first Flutter project:
+I envision this app as a way to explore the Naruto world. where enthusiasts can start by simple things to more complex information.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+How do I want my app to be structured :
+  - Start by learning the different Villages existing in the Naruto universe.
+  - Then get to know the different clans that exist within the different villages.
+  - 
