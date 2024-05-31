@@ -12,15 +12,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   ApiHandler apiHandler = ApiHandler();
-  late List<Character> data = [];
+  late List<CharacterElement> data = [];
 
-  void getData() async{
+  void getData() async {
     data = await apiHandler.getCharacterData();
     setState(() {});
   }
 
   @override
-  void initState(){
+  void initState() {
     getData();
     super.initState();
   }
@@ -34,15 +34,16 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.teal,
         foregroundColor: Colors.white,
       ),
-
       bottomNavigationBar: MaterialButton(
         color: Colors.teal,
         textColor: Colors.white,
         padding: const EdgeInsets.all(20),
-        onPressed: getData,
-        child:  const Text('Refresh'),
+        onPressed: () {
+          getData();
+          print(data.length);
+        },
+        child: const Text('Refresh'),
       ),
-
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -50,7 +51,7 @@ class _HomePageState extends State<HomePage> {
             heroTag: 1,
             backgroundColor: Colors.teal,
             foregroundColor: Colors.white,
-            onPressed: (){},
+            onPressed: () {},
             child: const Icon(Icons.search),
           ),
           const SizedBox(
@@ -65,26 +66,28 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-
-      body: Column(
-        children: [
-          ListView.builder(
-            shrinkWrap: true,
-            itemCount: data.length,
-            itemBuilder: (BuildContext context, int index) {
-              return ListTile(
-                onTap: (){},
-                leading: Text("${data[index].total}"),
-                title: Text("${data[index].total}"),
-                subtitle: Text("${data[index].total}"),
-                trailing: IconButton(
-                  icon: const Icon(Icons.delete_outline),
-                  onPressed: () {},
-                ),
-              );
-            },
-          )
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: data.length,
+              itemBuilder: (BuildContext context, int index) {
+                return ListTile(
+                  onTap: () {},
+                  leading: Text(data[index].name),
+                  // title: Text("${data[index].total}"),
+                  // subtitle: Text("${data[index].total}"),
+                  trailing: IconButton(
+                    icon: const Icon(Icons.delete_outline),
+                    onPressed: () {},
+                  ),
+                );
+              },
+            )
+          ],
+        ),
       ),
     );
   }

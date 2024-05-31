@@ -16,8 +16,8 @@ class ApiHandler {
   final String akatsuki = "/akatsuki";
   final String kara = "/kara";
 
-  Future<List<Character>> getCharacterData() async{
-    List<Character> data = [];
+  Future<List<CharacterElement>> getCharacterData() async{
+    List<CharacterElement> data = [];
 
     final uri = Uri.parse(baseUri+characters);
     try{
@@ -34,14 +34,14 @@ class ApiHandler {
 
       if(response.statusCode >= 200 && response.statusCode <= 299){
         final jsonResponse = json.decode(response.body);
-        print('jsonResponse: $jsonResponse');
+        print('jsonResponse: ${jsonResponse.runtimeType}');
         final characterList = jsonResponse['characters'] as List;
 
-        print('characterList: $characterList');
+        print('characterList: ${characterList.length}');
         print('just checking data');
 
         // Map json list to character list
-        data = characterList.map((json) => Character.fromJson(json)).toList();
+        data = characterList.map((json) => CharacterElement.fromJson(json)).toList();
 
         print('data: $data');
       }
