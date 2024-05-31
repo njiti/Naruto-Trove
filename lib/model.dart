@@ -72,12 +72,12 @@ class CharacterElement {
     debut: Debut.fromJson(json["debut"]),
     family: json["family"] == null ? null : Family.fromJson(json["family"]),
     jutsu: List<String>.from(json["jutsu"].map((x) => x)),
-    natureType: json["natureType"] == null ? [] : List<String>.from(json["natureType"]!.map((x) => x)),
+    natureType: json["natureType"] == null ? [] : List<String>.from(json["natureType"].map((x) => x)),
     personal: Personal.fromJson(json["personal"]),
     rank: json["rank"] == null ? null : Rank.fromJson(json["rank"]),
-    tools: json["tools"] == null ? [] : List<String>.from(json["tools"]!.map((x) => x)),
+    tools: json["tools"] == null ? [] : List<String>.from(json["tools"].map((x) => x)),
     voiceActors: VoiceActors.fromJson(json["voiceActors"]),
-    uniqueTraits: json["uniqueTraits"] == null ? [] : List<String>.from(json["uniqueTraits"]!.map((x) => x)),
+    uniqueTraits: json["uniqueTraits"] == null ? [] : List<String>.from(json["uniqueTraits"].map((x) => x)),
   );
 
   Map<String, dynamic> toJson() => {
@@ -347,7 +347,7 @@ class Personal {
     age: json["age"] == null ? null : Age.fromJson(json["age"]),
     height: json["height"] == null ? null : Height.fromJson(json["height"]),
     weight: json["weight"] == null ? null : Weight.fromJson(json["weight"]),
-    bloodType: bloodTypeValues.map[json["bloodType"]]!,
+    bloodType: bloodTypeValues.map[json["bloodType"]],
     kekkeiGenkai: json["kekkeiGenkai"],
     classification: json["classification"],
     tailedBeast: json["tailedBeast"],
@@ -355,7 +355,7 @@ class Personal {
     affiliation: List<String>.from(json["affiliation"].map((x) => x)),
     team: json["team"],
     clan: json["clan"],
-    titles: json["titles"] == null ? [] : List<String>.from(json["titles"]!.map((x) => x)),
+    titles: json["titles"] == null ? [] : List<String>.from(json["titles"].map((x) => x)),
     status: json["status"],
     kekkeiMra: json["kekkeiMōra"],
     partner: json["partner"],
